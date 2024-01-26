@@ -73,30 +73,36 @@ export default function Footer() {
           </div>
         </div>
         {/* 3. 아이콘 */}
-        <div>
+        <div className="flex flex-col gap-4">
           <h3 className=" uppercase">FOLLOW MARVEL</h3>
-          <div>
-            <p>
+          <div className=" grid grid-cols-4 text-lg">
+            <span>
               <Facebook />
-            </p>
-            <p>
+            </span>
+
+            <span>
               <Twitter />
-            </p>
-            <p>
+            </span>
+
+            <span>
               <Instagram />
-            </p>
-            <p>
+            </span>
+
+            <span>
               <Tumb />
-            </p>
-            <p>
+            </span>
+
+            <span>
               <Youtube />
-            </p>
-            <p>
+            </span>
+
+            <span>
               <Snapchat />
-            </p>
-            <p>
+            </span>
+
+            <span>
               <Pinterest />
-            </p>
+            </span>
           </div>
         </div>
       </div>
