@@ -4,6 +4,7 @@ import "./index.css";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainPage from "./routes/MainPage.jsx";
 import NotFound from "./routes/NotFound.jsx";
+
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const router = createBrowserRouter([
