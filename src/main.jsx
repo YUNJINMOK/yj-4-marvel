@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainPage from "./routes/MainPage.jsx";
-import NotFound from "./routes/NotFound.jsx";
+import NOT from "./routes/NOT.jsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Outlet />,
-    errorElement: <NotFound />,
+    errorElement: <NOT />,
     children: [
       {
         path: "",
