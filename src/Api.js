@@ -20,3 +20,11 @@ export async function apiGetEvents() {
     },
   }).then((res) => res.json());
 }
+
+// [GET] characters 리스트
+export async function apiGetCharacters() {
+  try {
+  } catch (error) {
+    console.log(error);
+  }
+}

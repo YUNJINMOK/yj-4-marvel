@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import Layout from "../components/Layout";
 import MainSlide from "../components/MainSlide";
 import TitleImageBox from "../components/TitleImageBox";
-import { apiGetComics, apiGetEvents } from "../api";
+import { apiGetEvents, apiGetComics } from "../api";
 import ListCarousel from "../components/ListCarousel";
 import TitleRotate from "../components/TitleRotate";
 
@@ -31,7 +31,13 @@ export default function MainPage() {
       <MainSlide />
 
       {/* 코믹스 섹션 */}
-      <TitleImageBox imgUrl="https://cdn.britannica.com/62/182362-050-BD31B42D/Scarlett-Johansson-Black-Widow-Chris-Hemsworth-Thor.jpg" />
+      <TitleImageBox
+        imgUrl="https://cdn.britannica.com/62/182362-050-BD31B42D/Scarlett-Johansson-Black-Widow-Chris-Hemsworth-Thor.jpg"
+        mainTitle="available now"
+        subTitle="new on marvel unlimited"
+        description="Read these plus 30,000+ digital comics for $9.99 a month!"
+        btnTxt=" get marvel unlimited"
+      />
 
       {/* 리스트 캐러셀 */}
       <ListCarousel lists={lists} />
@@ -79,6 +85,14 @@ export default function MainPage() {
           <div className="w-full h-full"></div>
         </div>
       </section>
+      {/* 캐릭터 */}
+      <TitleImageBox
+        imgUrl="https://compote.slate.com/images/b3997261-711a-4d26-b18e-e1dd7dc19dd9.jpeg?crop=1560%2C1040%2Cx0%2Cy0&width=1200"
+        mainTitle="on sale 1/31"
+        subTitle="new comics this week"
+        description="Check out the newest Marvel comics coming out this week!"
+        btnTxt="print subscription"
+      />
     </Layout>
   );
 }
