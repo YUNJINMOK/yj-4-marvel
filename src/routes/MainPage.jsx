@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import Layout from "../components/Layout";
 import MainSlide from "../components/MainSlide";
 import TitleImageBox from "../components/TitleImageBox";
-import { apiGetComics, apiGetEvents } from "../api.js";
+import { apiGetComics, apiGetEvents } from "../api";
 import ListCarousel from "../components/ListCarousel";
 import TitleRotate from "../components/TitleRotate";
 
