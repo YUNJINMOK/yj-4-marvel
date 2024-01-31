@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import Layout from "../components/Layout";
 import TitleRotate from "../components/TitleRotate";
 import {apiGetCharacters} from "../api"
+import { ScaleLoader } from "react-spinners";
 
 export default function Characters() {
   let characters;
@@ -14,7 +15,7 @@ export default function Characters() {
     characters = data?.data.results;
   }
 
-  console.log(characters);
+  
   return (
     <Layout>
       {/* 캐릭터 서브페이지 이미지타이틀 */}
@@ -38,6 +39,7 @@ export default function Characters() {
         <div className="max-w-7xl w-full">
           {/* 제목 */}
           <TitleRotate text="featured characters" />
+          
           <div className="grid grid-cols-6 gap-4">
             {characters?.map((item, index) => (
               <div key={index} className="h-[340px] group cursor-pointer">
