@@ -1,5 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 import LogoLarge from "../assets/png/logo-large.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -36,7 +37,9 @@ export default function Header() {
     <section className="w-full border border-gray-700 flex justify-center h-10 bg-main-dark text-white uppercase space-x-8 text-sm items-center">
         <p>news</p>
         <p>comics</p>
+        <Link to="/characters">
         <p>characters</p> 
+        </Link>
         <p>movies</p>
         <p>tv shows</p>
         <p>games</p>
