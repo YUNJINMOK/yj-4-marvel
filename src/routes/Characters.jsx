@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import Layout from "../components/Layout";
 import TitleRotate from "../components/TitleRotate";
-import {apiGetCharacters} from "../api"
+import {apiGetCharacters} from "../apis"
 
 
 export default function Characters() {

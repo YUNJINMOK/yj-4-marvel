@@ -2,13 +2,14 @@ import { useQuery } from "react-query";
 import Layout from "../components/Layout";
 import MainSlide from "../components/MainSlide";
 import TitleImageBox from "../components/TitleImageBox";
-import { apiGetEvents,apiGetCharacters,apiGetComics } from "../api"
+
 import ListCarousel from "../components/ListCarousel";
 import TitleRotate from "../components/TitleRotate";
 import Layout7 from "../components/Layout7";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import Button from "../components/Button";
 import HypeImg from "../assets/svg/titleHype.svg";
+import { apiGetCharacters, apiGetComics, apiGetEvents } from "../apis";
 
 export default function MainPage() {
   let lists; // fetch 요청한 배열을 받기 위한 변수
