@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import Layout from "../components/Layout";
 import TitleRotate from "../components/TitleRotate";
 import {apiGetCharacters} from "../api"
-import { ScaleLoader } from "react-spinners";
+
 
 export default function Characters() {
   let characters;
