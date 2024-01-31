@@ -1,7 +1,8 @@
 import Facebook from "../assets/Facebook";
 import Insta from "../assets/Insta";
 import Pinterest from "../assets/Pinterest";
-import SnapChat from "../assets/SnapChat";
+import SnapChats from "../assets/Snapchats";
+
 import Tumb from "../assets/Tumb";
 import Twitter from "../assets/Twitter";
 import Youtube from "../assets/Youtube";
@@ -75,7 +76,7 @@ export default function Footer() {
                     <p><Insta /></p>
                     <p><Tumb /></p>
                     <p><Youtube /></p>
-                    <p><SnapChat /></p>
+                    <p><SnapChats /></p>
                     <p><Pinterest /></p>
                 </div>
             </div>
