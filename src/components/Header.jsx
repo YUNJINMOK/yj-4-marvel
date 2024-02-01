@@ -18,7 +18,9 @@ export default function Header() {
                 {/* subscribe */}
                 <div className="h-full flex items-center space-x-2">
                     {/* 왼쪽이미지 */}
+                    
                     <img className="h-[60%] inline-block" src="https://cdn.marvel.com/u/prod/marvel/images/mu/web/2021/icon-mu-shield.png" alt="image_marvel" />
+                   
                     <div className=" inline-block uppercase text-center">
                         <p className="text-sm">marvel unlimited</p>
                         <p className="text-xs">subscribe</p>
@@ -30,7 +32,9 @@ export default function Header() {
             </div>
             {/* 중앙: 로고 */}
             <div className="absolute h-full top-0 left-[50%] -translate-x-[50%]">
+                <Link to="/">
                 <img className="h-full" src={LogoLarge} alt="logo_large" />
+                </Link>
             </div>
         </div>
     </section>

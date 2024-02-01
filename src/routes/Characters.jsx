@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import Layout from "../components/Layout";
 import TitleRotate from "../components/TitleRotate";
 import {apiGetCharacters} from "../apis"
+import { Link } from "react-router-dom";
 
 
 export default function Characters() {
@@ -43,6 +44,8 @@ export default function Characters() {
           <div className="grid grid-cols-6 gap-4">
             {characters?.map((item, index) => (
               <div key={index} className="h-[340px] group cursor-pointer">
+                <Link to={`/characters/${item.id}`}>
+
                 <div
                   style={{
                     clipPath:
@@ -70,6 +73,7 @@ export default function Characters() {
                     <div className="w-full duration-300 h-[95%] group-hover:h-0 bg-main-dark"></div>
                   </div>
                 </div>
+                </Link>
               </div>
             ))}
           </div>
