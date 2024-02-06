@@ -1,12 +1,15 @@
+import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainPage from "./routes/MainPage.jsx";
 import NotFound from "./routes/NotFound.jsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Characters from "./routes/Characters.jsx";
-import CharactersDetail from "./routes/CharactersDetail.jsx";
+import CharacterDetail from "./routes/CharacterDetail.jsx";
+import Comics from "./routes/Comics.jsx";
+import ComicDetail from "./routes/ComicDetail.jsx";
+import Email from "./routes/Email.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +22,25 @@ const router = createBrowserRouter([
         element: <MainPage />,
       },
       {
+        path: "email",
+        element: <Email />,
+      },
+      {
+        path: "comics",
+        element: <Comics />,
+      },
+      {
+        path: "comics/:id",
+        element: <ComicDetail />,
+      },
+
+      {
         path: "characters",
         element: <Characters />,
       },
       {
         path: "characters/:id",
-        element: <CharactersDetail />,
+        element: <CharacterDetail />,
       },
     ],
   },
