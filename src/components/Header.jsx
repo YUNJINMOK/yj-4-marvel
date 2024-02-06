@@ -3,52 +3,14 @@ import LogoLarge from "../assets/png/logo-large.png";
 import NavLink from "./NavLink";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import CharactersComponent from "./menus/CharactersComponent";
+import ComicsComponent from "./menus/ComicsComponent";
 
-const MENUS = [
-  {
-    text: "news",
-    href: "#",
-    component: "",
-  },
-  {
-    text: "comics",
-    href: "/comics",
-    component: "",
-  },
-  {
-    text: "characters",
-    href: "/characters",
-    component: "",
-  },
-  {
-    text: "movies",
-    href: "/movies",
-    component: "",
-  },
-  {
-    text: "Tv show",
-    href: "/tv",
-    component: "",
-  },
-  {
-    text: "games",
-    href: "/games",
-    component: "",
-  },
-  {
-    text: "videos",
-    href: "/videos",
-    component: "",
-  },
-  {
-    text: "more",
-    href: "/more",
-    component: "",
-  },
-];
+
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuContent,setMenuContent] = useState()
   console.log(menuOpen);
   return (
     <>
@@ -94,6 +56,7 @@ export default function Header() {
             <NavLink
               menuOpen={menuOpen}
               setMenuOpen={setMenuOpen}
+              setMenuContent={setMenuContent}
               key={index}
               href={item.href}
               component={item.component}
@@ -105,15 +68,63 @@ export default function Header() {
         {menuOpen && (
           <AnimatePresence>
             <motion.div
+              onMouseEnter={() => setMenuOpen(true)}
+              onMouseLeave={() => setMenuOpen(false)}
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -5 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="z-30 absolute top-10 left-0 w-full h-80 bg-white"
-            ></motion.div>
+              className="z-50 absolute top-10 left-0 w-full shadow-lg bg-white"
+            >
+              <div className=" absolute top-0 left-0 right-0 h-10 bg-transparent "/>
+              
+              {menuContent}
+            </motion.div>
           </AnimatePresence>
         )}
       </div>
     </>
   );
 }
+const MENUS = [
+  {
+    text: "news",
+    href: "#",
+    component: "",
+  },
+  {
+    text: "comics",
+    href: "/comics",
+    component: ComicsComponent,
+  },
+  {
+    text: "characters",
+    href: "/characters",
+    component: CharactersComponent,
+  },
+  {
+    text: "movies",
+    href: "/movies",
+    component: "",
+  },
+  {
+    text: "Tv show",
+    href: "/tv",
+    component: "",
+  },
+  {
+    text: "games",
+    href: "/games",
+    component: "",
+  },
+  {
+    text: "videos",
+    href: "/videos",
+    component: "",
+  },
+  {
+    text: "more",
+    href: "/more",
+    component: "",
+  },
+];
