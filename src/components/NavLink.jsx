@@ -4,15 +4,14 @@ export default function NavLink({
   children,
   href,
   component,
-  
   setMenuOpen,
-  setMenuContent
+  setMenuContent,
 }) {
   return (
     <div
       onMouseEnter={() => {
         setMenuOpen(true);
-        setMenuContent(component)
+        setMenuContent(component);
       }}
       onMouseLeave={() => setMenuOpen(false)}
       className="group"

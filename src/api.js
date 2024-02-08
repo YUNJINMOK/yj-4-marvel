@@ -1,7 +1,28 @@
 import qs from "qs";
+import xml2js from "react-native-xml2js";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://gateway.marvel.com:443/v1/public";
+
+export async function apiGetMunhwa() {
+  try {
+    let data;
+    const xmlData = await fetch(
+      "http://www.cha.go.kr/cha/SearchKindOpenapiList.do"
+    ).then((res) => res.text());
+
+    xml2js.parseString(xmlData, (err, result) => {
+      if (err !== null) {
+        console.log(err);
+        return;
+      }
+      data = result;
+    });
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 // [GET] Comics 리스트
 export async function apiGetComics({ queryKey }) {
@@ -19,13 +40,18 @@ export async function apiGetComics({ queryKey }) {
 }
 
 // [GET] Events 리스트
-export async function apiGetEvents() {
-  return await fetch(`${BASE_URL}/events?limit=10&apikey=${API_KEY}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((res) => res.json());
+export async function apiGetEvents({ pageParam }) {
+  console.log(pageParam);
+  const offset = pageParam * 10;
+  return await fetch(
+    `${BASE_URL}/events?limit=10&offset=${offset}&apikey=${API_KEY}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  ).then((res) => res.json());
 }
 
 // [GET] Characters 리스트
