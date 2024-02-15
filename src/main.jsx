@@ -11,6 +11,7 @@ import Comics from "./routes/Comics.jsx";
 import ComicDetail from "./routes/ComicDetail.jsx";
 import Email from "./routes/Email.jsx";
 import Munhwa from "./routes/Munhwa.jsx";
+import ExpressTest from "./routes/ExpressTest.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <MainPage />,
+      },
+      {
+        path: "test",
+        element: <ExpressTest />,
       },
       {
         path: "munhwa",

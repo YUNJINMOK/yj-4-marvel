@@ -4,6 +4,14 @@ import xml2js from "react-native-xml2js";
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://gateway.marvel.com:443/v1/public";
 
+export async function expressTest() {
+  try {
+    return await fetch("http://localhost:3000").then((res) => res.json());
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function apiGetMunhwa() {
   try {
     let data;
